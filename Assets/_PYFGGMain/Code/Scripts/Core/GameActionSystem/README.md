@@ -28,9 +28,8 @@ GameActionSystem/
 ├── StructsData/
 │ ├── ActionDefinition.cs
 │ └── ActionRequest.cs
-├── Builders/
-│ ├── ActionRegistrationBuilder.cs
-│ └── ActionSetBuilder.cs
+├── ActionRegistrationBuilder.cs
+├── ActionSetBuilder.cs
 ├── TriggerBuffer.cs
 ├── GameActionSystem.asmdef # Assembly Definition for the system.
 └── README.md # This file
