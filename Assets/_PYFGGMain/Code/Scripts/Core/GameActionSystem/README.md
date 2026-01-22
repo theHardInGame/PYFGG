@@ -72,6 +72,15 @@ GameActionSystem/
 - **TriggerBuffer.cs** – Buffer for triggers. Managed via `ActionRunner` inspector fields.
 
 ---
+
+## Usage in Scene:
+1. Add `ActionAgentType` to your player GameObject.
+2. Add `ActionRunner` to any GameObject to manage actions.
+3. Add your custom `PlayerActionSet` Factory to create the action set.
+4. Add `ActionTriggerRuntime` if you want automatic trigger handling.
+
+---
+
 ## ActionConfig explanation
 ![Inherited ActionConfig parameters](https://github.com/user-attachments/assets/311a7f26-4dd5-4d86-86e0-42fd99eeb3a0)  
 User created actionconfigs will inherit these paramter from base `ActionConfig`.
@@ -386,12 +395,6 @@ public sealed class PlayerActionAgent : ActionAgentType
 Make sure to include "using PYFGG.GameActionSystem"
 
 ---
-
-## Usage in Scene:
-1. Add `ActionAgentType` to your player GameObject.
-2. Add `ActionRunner` to any GameObject to manage actions.
-3. Add your custom `PlayerActionSet` Factory to create the action set.
-4. Add `ActionTriggerRuntime` if you want automatic trigger handling.
 
 ## Tips for users
 User are to create their own Action, Trigger and Config for a given action and AgentType and AgentTypeActionSetFactories for given agent.
