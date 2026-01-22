@@ -19,8 +19,8 @@ Please refer to GameActionSystem's [README](https://github.com/theHardInGame/PYF
 1. Load Bootstrap.unity (scene) intro heirarchy. Make sure it is the only scene in Heirarchy before entering Play Mode.
 2. If is missing, in Assets/_Bootstrap/BootConfig.asset, reassign InputManager.asset prefab.
 3. Make sure it looks likes this:
-   <img width="597" height="476" alt="image" src="https://github.com/user-attachments/assets/13ec3680-326c-42a7-aae2-b2513ac593a1" />
-   (Make sure both scenes are in Scene List of your editors Build Profiles)
+<img width="597" height="476" alt="image" src="https://github.com/user-attachments/assets/13ec3680-326c-42a7-aae2-b2513ac593a1" />
+(Make sure both scenes are in Scene List of your editors Build Profiles)
 5. Press Play
 Controls:
 W, A, S, D for movement.
