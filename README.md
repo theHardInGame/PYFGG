@@ -21,9 +21,9 @@ Please refer to GameActionSystem's [README](https://github.com/theHardInGame/PYF
 3. It should looks like this:  
    ![Boostrap Scene Setup](https://github.com/user-attachments/assets/13ec3680-326c-42a7-aae2-b2513ac593a1)  
    (Make sure both scenes are in your Editors Build Settings Scene List)  
-5. Press Play.
+4. Press Play.
 
 Controls:  
-W, A, S, D -> Move
+W, A, S, D -> Move  
 Space -> Jump.  
 Left Shift -> Dash & (hold)Sprint.  
