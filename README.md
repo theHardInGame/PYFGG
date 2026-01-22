@@ -22,6 +22,7 @@ Please refer to GameActionSystem's [README](https://github.com/theHardInGame/PYF
    <img width="597" height="476" alt="image" src="https://github.com/user-attachments/assets/13ec3680-326c-42a7-aae2-b2513ac593a1" />  
    (Make sure both scenes are in Scene List of your editors Build Profiles)  
 4. Press Play.
+
 Controls:  
 W, A, S, D for movement.  
 Space for jump.  
