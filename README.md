@@ -18,8 +18,8 @@ Please refer to GameActionSystem's [README](https://github.com/theHardInGame/PYF
 (This is only for editor Play Mode)
 1. Load Bootstrap.unity (scene) intro hierarchy. Make sure it is the only scene in hierarchy before entering Play Mode.
 2. If is missing, in Assets/_Bootstrap/BootConfig.asset, reassign InputManager.asset prefab.
-3. It should looks like this:
-   ![Boostrap Scene Setup](https://github.com/user-attachments/assets/13ec3680-326c-42a7-aae2-b2513ac593a1)
+3. It should looks like this:  
+   ![Boostrap Scene Setup](https://github.com/user-attachments/assets/13ec3680-326c-42a7-aae2-b2513ac593a1)  
    (Make sure both scenes are in your Editors Build Settings Scene List)  
 5. Press Play.
 
