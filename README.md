@@ -27,3 +27,6 @@ Controls:
 W, A, S, D -> Move  
 Space -> Jump.  
 Left Shift -> Dash & (hold)Sprint.  
+
+
+**Unity version used:** Unity 6000.3.1f1
