@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BootConfig
   m_EditorClassIdentifier: Assembly-CSharp::BootConfig
   scenesToLoad:
-  - PerspectiveSwitchingTest
+  - TestLevel
   - Player
   skipMainMenu: 1
   managersToInitiate:
