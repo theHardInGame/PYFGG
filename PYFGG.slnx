@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="GameActionSystem.csproj" />
+  <Project Path="../../C#Project/RottenOranges/RottenOranges.csproj" />
+</Solution>
