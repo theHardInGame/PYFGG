@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 
@@ -30,6 +32,7 @@ public class MotorController : MonoBehaviour
     [Tooltip("Handles gravity and grounding logic.")]
     [SerializeField] private Gravity gravity;
 
+    [SerializeField] private TextMeshProUGUI debugText;
 
     /// <summary>
     /// Sets the X component of the base velocity while preserving
@@ -119,6 +122,11 @@ public class MotorController : MonoBehaviour
     }
 
     /// <summary>
+    /// Gets the current velocity of Unity's Rigidbody component.
+    /// </summary>
+    public Vector3 CurrentRBDVelocity => rbHandler.CurrentRBDVelocity;
+
+    /// <summary>
     /// Gets the final composed velocity currently applied to the Rigidbody.
     /// </summary>
     public Vector3 CurrentVelocity => rbHandler.CurrentCompVelocity;
@@ -133,6 +141,11 @@ public class MotorController : MonoBehaviour
     /// Will return the current actively acting one i.e. decay will be considered.
     /// </summary>
     public Vector3 ImpulseVelocity => rbHandler.ImpulseVelocity;
+
+    /// <summary>
+    /// Gets current GraivtyVelocity applied on the Rigidbody.
+    /// </summary>
+    public Vector3 GravityVelocity => rbHandler.GravityVelocity;
 
     /// <summary>
     /// Gets the addition of all AdditiveVelocities acting on the Rigidbody.
@@ -157,7 +170,7 @@ public class MotorController : MonoBehaviour
     /// <summary>
     /// Time stamp since last grounded state.
     /// </summary>
-    public float LastGroundedTime { get; private set; }
+    public float AirTime { get; private set; }
 
     /// <summary>
     /// Gets the current gravity strength.
@@ -172,14 +185,20 @@ public class MotorController : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateLastGroundedTime();
+
+        debugText.text = $"RBD Velocity: { CurrentRBDVelocity }\nBase Velocity: { BaseVelocity }\nImpulse Velocity: { ImpulseVelocity }\nGravity Velocity: { GravityVelocity }\n{( IsGrounded ? "Grounded" : "Airborne") }";
     }
 
     private bool wasGrounded;
     private void UpdateLastGroundedTime()
     {
-        if (gravity.IsGrounded && !wasGrounded)
+        if (!IsGrounded)
         {
-            LastGroundedTime = Time.fixedTime;
+            AirTime += Time.fixedDeltaTime;
+        }
+        if (IsGrounded && !wasGrounded)
+        {
+            AirTime = 0f;
         }
 
         wasGrounded = gravity.IsGrounded;

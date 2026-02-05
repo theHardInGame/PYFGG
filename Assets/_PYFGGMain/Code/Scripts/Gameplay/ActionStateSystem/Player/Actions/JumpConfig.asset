@@ -16,11 +16,17 @@ MonoBehaviour:
   actionMode: 0
   actionInterruptionPolicy: 1
   priority: 0
-  actionPhases: []
+  actionPhases:
+  - actionPhaseID: 0
+    duration: 0
+    interruptPolicy: 0
+  - actionPhaseID: 0
+    duration: 0
+    interruptPolicy: 1
   maxJumpHeight: 2.5
   minJumpHeight: 2
   minUninterruptedHeight: 2
   walkJumpBoost: 5
   sprintJumpBoost: 10
   earlyReleaseFactor: 0.5
-  coyoteTime: 0.1
+  coyoteTime: 0.5

@@ -280,7 +280,16 @@ public class InputManager :  MonoBehaviour, IInitializable
     }
 
     /// <summary>
-    /// Registers an InputAction to a public reference using a setter delegate.
+    /// Registers an InputAction to a public reference using a setter delegate. <br/>
+    /// <para>
+    /// Example use: <br/>
+    /// RegisterInputAction(Jump, f => JumpEvent?.Invoke(f), 0.0f) <br/>
+    /// Where:
+    /// <list type="bullet">
+    ///     <item> Jump: InputAction </item>
+    ///     <item> JumpEvent: public event </item>
+    /// </list>
+    /// </para>
     /// </summary>
     /// <typeparam name="T">Type of input. Must be a value type (struct).</typeparam>
     /// <param name="inputAction">The InputAction to register. Must not be null.</param>

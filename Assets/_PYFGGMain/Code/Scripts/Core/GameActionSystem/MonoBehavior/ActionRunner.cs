@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using TMPro;
 
 namespace PYFGG.GameActionSystem
 {
@@ -11,7 +11,7 @@ namespace PYFGG.GameActionSystem
         [SerializeField] private ActionAgentType actionAgent;
         [SerializeField] private int bufferSize = 2;
         [SerializeField] internal float bufferLife = 1f;
-
+        [SerializeField] private TextMeshProUGUI debugText;
 
         private IActionSetConfig actionSetConfig;
         private TriggerBuffer buffer;
@@ -111,6 +111,8 @@ namespace PYFGG.GameActionSystem
             Buffer.Accept(out ActionRequest r);
             runningAction = request.definition.Create(AgentContext, request.data);
             runningAction.Start();
+
+            debugText.text = $"Current Action:\n{ r.definition.config.actionName }";
         }
 
         private void RunAction()
@@ -121,6 +123,7 @@ namespace PYFGG.GameActionSystem
             {
                 runningAction.Kill();
                 runningAction = null;
+                debugText.text = "Current Action:\nNo Action";
             }
         }
 

@@ -9,9 +9,9 @@ public class JumpAction : ActionBase<JumpAction.Data, PlayerActionAgent.Context,
 
     protected override void OnKill()
     {
+        context.motorController.SetBaseVelocityY(0f);
         context.motorController.DisableGravity();
         context.motorController.EnableGravity();
-        context.motorController.SetBaseVelocityY(0f);
     }
 
     protected override void OnUpdate()
@@ -21,7 +21,7 @@ public class JumpAction : ActionBase<JumpAction.Data, PlayerActionAgent.Context,
 
     protected override bool OnRun()
     {
-        if (context.motorController.CurrentVelocity.y > 0)
+        if (context.motorController.CurrentVelocity.y > 0f)
         {
             UpdateJumpedHeight();
             UpdateCurrentPhaseIndex();
@@ -34,21 +34,12 @@ public class JumpAction : ActionBase<JumpAction.Data, PlayerActionAgent.Context,
 
     protected override void OnStart()
     {
-        //if (data.buttonRelease) return;
-
-        //motorController = context.motorController;
-        //movementController = context.movementController;
-
         startLocY = context.motorController.Position.y;
 
         CalculateJump(GetJumpType());
         CreateDynamicPhases();
         StartJump();
     }
-
-
-    //private MotorController motorController;
-    //private MovementController movementController;
 
     private float startLocY;
     private float verticalVel;

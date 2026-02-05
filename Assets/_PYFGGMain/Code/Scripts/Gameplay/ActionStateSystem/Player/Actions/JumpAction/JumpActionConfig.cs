@@ -35,6 +35,6 @@ public class JumpActionConfig : ActionConfig
             return false;
         }
 
-        return ctx.motorController.IsGrounded || Time.fixedTime - ctx.motorController.LastGroundedTime <= coyoteTime;
+        return ctx.motorController.IsGrounded || ctx.motorController.AirTime <= coyoteTime;
     }
 }       

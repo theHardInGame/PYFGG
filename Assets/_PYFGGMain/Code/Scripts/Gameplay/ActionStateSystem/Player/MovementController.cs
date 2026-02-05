@@ -348,7 +348,8 @@ public class MovementController : MonoBehaviour
     /// </summary>
     public void SupressMovement()
     {
-        motorController.SetBaseVelocity(Vector3.zero);
+        motorController.SetBaseVelocityX(0f);
+        motorController.SetBaseVelocityY(0f);
         overrideMode = MovementOverrideMode.Suppressed;
     }
 
@@ -385,37 +386,5 @@ public class MovementController : MonoBehaviour
     public bool IsWalking => Mathf.Abs(xInput) > 0.1f || Mathf.Abs(zInput) > 0.1f;
 
     public Vector3 LookDirection { get; private set; } = Vector3.right;
-    #endregion
-
-
-    #region Debug
-
-    // =============
-    // =   DEBUG   =
-    // =============
-
-#if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        if (motorController == null) return;
-
-        Vector3 origin = transform.position + Vector3.up * 0.1f;
-
-        // ----- Movement Intent -----
-        Vector3 intent = HorizontalInput.normalized;
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(origin, origin + intent);
-        Gizmos.DrawSphere(origin + intent, 0.05f);
-
-        // ----- Current Horizontal Velocity -----
-        Vector3 vel = Application.isPlaying ? CurrentHorizontalBaseVelocity : Vector3.zero;
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(origin, origin + vel * 0.2f);
-
-        // ----- Grounded State -----
-        Gizmos.color = motorController.IsGrounded ? Color.green : Color.red;
-        Gizmos.DrawWireSphere(origin, 0.15f);
-    }
-#endif
     #endregion
 }
