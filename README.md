@@ -11,6 +11,8 @@
 - Makes it easy to add new actions without modifying core logic.
 - Example actions in repository: Jump, Dash.
 
+![Demo](GameActSysDemo.gif)
+
 ## How To Use GameActionSystem
 Please refer to GameActionSystem's [README](https://github.com/theHardInGame/PYFGG/blob/main/Assets/_PYFGGMain/Code/Scripts/Core/GameActionSystem/README.md)
 
