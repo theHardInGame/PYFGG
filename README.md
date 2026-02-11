@@ -5,13 +5,18 @@
 - This repository highlights the core gameplay systems, particularly the dynamic state machine called **GameActionSystem** used for player and npc actions.
 - While the game itself is larger, only scripts and essential systems are included here for portfolio purposes.
 
-## Key Feature - GameActionSystem
+# GameActionSystem
 - A modular state machine for managing gameplay actions.
 - Currently implemented for the player, but designed to work for NPCs as well.
 - Makes it easy to add new actions without modifying core logic.
 - Example actions in repository: Jump, Dash.
 
 ![Demo](GameActSysDemo.gif)
+
+## What is GameActionSystem
+- GameActionSystem is a modular state machine framework, craeted for PYFGG. This framework allows creation of various actions such as Jump, Dodge, Stun, Attack Chains etc, with inbuilt interruption and override handling.  
+- Allows input buffering for responsive controls (or punishing ones like Dark Souls or Elden Ring).
+- Can be used as a execution handler for NPC/Enemy AI systems.
 
 ## How To Use GameActionSystem
 Please refer to GameActionSystem's [README](https://github.com/theHardInGame/PYFGG/blob/main/Assets/_PYFGGMain/Code/Scripts/Core/GameActionSystem/README.md)
