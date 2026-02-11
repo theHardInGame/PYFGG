@@ -21,7 +21,7 @@
 ## How To Use GameActionSystem
 Please refer to GameActionSystem's [README](https://github.com/theHardInGame/PYFGG/blob/main/Assets/_PYFGGMain/Code/Scripts/Core/GameActionSystem/README.md)
 
-## Testing/Running Environment Setup
+# Test Setup
 (This is only for editor Play Mode)
 1. Load Bootstrap.unity (scene) intro hierarchy. Make sure it is the only scene in hierarchy before entering Play Mode.
 2. If is missing, in Assets/_Bootstrap/BootConfig.asset, reassign InputManager.asset prefab.
